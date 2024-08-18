@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="prompt">
+        <button class="link"></button>
+        <div class="input">
+            <textarea #textarea [(ngModel)]="promptText" rows="1" (input)="onInput()" placeholder="Enter text here"></textarea>
+            <button class="submit" (click)="submit()"> </button>
+        </div>
+    </div>
+    <div class="prompt-settings">
+        <div class="toggle">
+            <label class="toggle-switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+            </label>
+            <span class="toggle-label">Web Access</span>
+        </div>
+        <div class="divider"></div>
+        <div class="toggle">
+            <label class="toggle-switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+            </label>
+            <span class="toggle-label">Web Access</span>
+        </div>
+    </div>
+</div>

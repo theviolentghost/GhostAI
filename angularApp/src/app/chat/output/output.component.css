@@ -1,0 +1,145 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.75rem;
+    padding: 1.3rem;
+    --profile-size: calc(30px + 1.25rem);
+    --font-size: 1.066rem;
+}
+.container.hide-profiles {
+    --profile-size: 0px;
+}
+@media (max-width: 640px) {
+    .container {
+        --profile-size: 0px;
+    }
+}
+.prompt-container , .output-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 100%;
+    width: auto;
+}
+.prompt-container.hidden , .output-container.hidden {
+    display: none;
+}
+.prompt, .output {
+    --margin: 12px;
+    position: relative;
+    width: calc(100% - var(--profile-size) - var(--margin) * 2);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin: 0 var(--margin);
+    display: flex;
+    flex-direction: row;
+    min-height: 30px;
+    height: auto;
+}
+.prompt {
+    background: var(--primary);
+}
+.output {
+    background: var(--background-lighter);
+}
+.prompt p, .output p {
+    font-size: var(--font-size);
+    margin: 0 .5rem;
+    white-space: pre-line;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    color: var(--text);
+    flex: 1;
+    display: inline-block;
+    width: 100%;
+    overflow: auto;
+}
+.messenger-appearance .prompt::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50px;
+    aspect-ratio: 1;
+    background: inherit;
+    transform: translate(25%,30%) rotate(135deg);
+    clip-path: polygon(50% 0%, 20% 50%, 100% 100%);
+    z-index: -1;
+}
+.messenger-appearance .output::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    aspect-ratio: 1;
+    background: inherit;
+    transform: translate(-25%,30%) rotate(-135deg);
+    clip-path: polygon(50% 0%, 0% 100%, 80% 50%);
+    z-index: -1;
+}
+.messenger-appearance .prompt-container {
+    align-self: flex-end;
+}
+.messenger-appearance .output-container {
+    align-self: flex-start;
+}
+.messenger-appearance .prompt, .messenger-appearance .output {
+    margin: 0 var(--margin);
+}
+.output.loading {
+    animation: waiting-for-text 4s linear infinite;
+    background: repeating-linear-gradient(
+        135deg,
+        var(--background) 0%,
+        var(--background-lighter) 25%,
+        var(--background) 50%
+    );
+    background-size: 200% 200%;
+    height: 100%;
+    width: 100%;
+}
+@keyframes waiting-for-text {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+.profile.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader {
+    width: 50px;
+    scale: 0.75;
+    aspect-ratio: 1;
+    --_c:no-repeat radial-gradient(farthest-side,var(--primary) 92%,#0000);
+    background: 
+      var(--_c) top,
+      var(--_c) left,
+      var(--_c) right,
+      var(--_c) bottom;
+    background-size: 24px 24px;
+    animation: none;
+  }
+  .loader::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 25%;
+    height: 25%;
+    transform: translate(-50%,-50%);
+    background-color: yellow;
+    z-index: -1;
+    border-radius: 50%;
+  }
+  .loader.loading {
+    animation: l7 1s infinite;
+  }
+  @keyframes l7 {to{transform: rotate(.5turn)}}

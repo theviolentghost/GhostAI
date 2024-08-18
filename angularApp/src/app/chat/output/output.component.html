@@ -1,0 +1,16 @@
+<div class="container" [ngClass]="{ 'messenger-appearance': messengerAppearance, 'hide-profiles': hideProfiles }">
+    <div class="prompt-container" [ngClass]="{ 'hidden': userSpecific === 'assistant'}">
+        <div class="prompt">
+            <p>{{prompt}}</p>
+        </div>
+        <div class="profile"></div>
+    </div>
+    <div class="output-container" [ngClass]="{ 'hidden': userSpecific === 'user'}">
+        <div class="profile">
+            <div class="loader" [ngClass]="{ 'loading': display.length == 0}"></div>
+        </div>
+        <div class="output" [ngClass]="{ 'loading': display.length == 0}">
+            <p>{{display}}</p>
+        </div>
+    </div>
+</div>

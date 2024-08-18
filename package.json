@@ -1,0 +1,12 @@
+{
+    "name": "ghostai",
+    "version": "1.0.0",
+    "scripts": {
+      "start": "concurrently \"npm run start --prefix angularApp\" \"npm run dev --prefix api\"",
+      "stop": "pkill -f 'ng serve'; pkill -f 'node src/server.js'"
+    },
+    "devDependencies": {
+      "concurrently": "^6.0.0"
+    }
+  }
+  

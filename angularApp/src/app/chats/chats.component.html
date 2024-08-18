@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="actions">
+        <button class="action">
+            <span>New Workspace</span>
+        </button>
+        <button class="action">
+            <span>Action 2</span>
+        </button>
+    </div>
+    <div class="workspaces">
+        <div *ngFor="let workspace of workspaces"
+            class="workspace"
+            (click)="toggleThreads(workspace)">
+            <div class="options"></div>
+            <span>{{ workspace.name }}</span>
+            <div class="threads" [ngClass]="{'hidden': !workspace.showThreads}" #threads>
+                <div class="thread" (mousedown)="createNewThread($event, workspace.slug)"><span>New Thread</span></div>
+                <a *ngFor="let thread of workspace.threads"
+                class="thread"
+                [routerLink]="['/chat', workspace.slug, thread.slug]"
+                (mousedown)="onThreadClick($event)">
+                <div class="options"></div>
+                <span>{{ thread.slug }}</span>
+            </a>
+            </div>
+        </div>
+    </div>
+</div>

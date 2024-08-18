@@ -1,0 +1,31 @@
+.chat {
+    position: absolute;
+    min-width: min(100%, 900px);
+    max-height: calc(100% - 8rem - 1rem);
+    width: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    scroll-behavior: smooth;
+}
+.profile {
+    display: flex;
+    position: relative;
+    border-radius: 9999px;
+    aspect-ratio: 1;
+    background: var(--background-light);
+    width: var(--profile-size);
+    max-height: var(--profile-size);
+    flex-shrink: 0;
+    flex-grow: 0;
+    align-self: flex-start;
+}
+.fade {
+    position: absolute;
+    width: 100%;
+    background: linear-gradient(0deg, var(--background), transparent);
+    bottom: 9rem;
+    height: 30px;
+}

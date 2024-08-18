@@ -1,0 +1,12 @@
+<div class="chat">
+    <ng-template #chatstream>
+        <!--<chat-output [display]="display"></chat-output>-->
+    </ng-template>
+</div>
+<div class="fade"></div>
+<chat-input 
+    (chatInputedEmitter)="handleNewInput($event)"
+    (chatStartEmitter)="handleChatStart()"
+    (chunkEmitter)="handleChunk($event)"
+></chat-input>
+

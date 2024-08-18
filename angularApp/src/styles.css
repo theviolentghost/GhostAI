@@ -1,0 +1,93 @@
+:root {
+    --done: #4C956C;
+    --warning: #F5B041;
+    --denied: #C94C4C;
+    --neutral: #5c5c5c;
+
+    --font-head: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    --font-main: 'Roboto', sans-serif;
+
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+
+    /* Glow intensities */
+    --glow-intensity-low: 0 0 5px;
+    --glow-intensity-medium: 0 0 10px;
+    --glow-intensity-high: 0 0 15px;
+    --glow-intensity-extreme: 0 0 20px;
+
+    /* Glow spreads */
+    --glow-spread-low: 0 0 5px 2px;
+    --glow-spread-medium: 0 0 10px 4px;
+    --glow-spread-high: 0 0 15px 6px;
+    --glow-spread-extreme: 0 0 20px 8px;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --primary: #F0A6CA;
+        --secondary: #feb47b;
+        --accent: #FFF9F4;
+        --background-lighter: #faf1ea;
+        --background-light: #f0dfd2;
+        --background: #ecd9cb;
+        --background-dark: #bba697;
+        --background-darker: #978475;
+        --disbaled: #5b524b;
+        --text: #333333;
+
+        background-color: var(--background);
+        color: var(--text);
+    }
+}
+@media (prefers-color-scheme: dark) { 
+    :root {
+        --primary: #F0A6CA;
+        --secondary: #feb47b;
+        --accent: #FFF9F4;
+        --background-lighter: #756e61;
+        --background-light: #534d43;
+        --background: #3b3935;
+        --background-dark: #292826;
+        --background-darker: #1f1f1c;
+        --disabled: #282623;
+        --text: #FFF9F4;
+
+        background-color: var(--background);
+        color: var(--text);
+    }
+}
+
+.m-0 { margin-bottom: 0; }
+.m-1 { margin-bottom: var(--spacing-xs); }
+.m-2 { margin-bottom: var(--spacing-sm); }
+.m-3 { margin-bottom: var(--spacing-md); }
+.m-4 { margin-bottom: var(--spacing-lg); }
+.m-5 { margin-bottom: var(--spacing-xl); }
+
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+    font-family: var(--font-head);
+    margin: 0;
+}
+* {
+    font-family: var(--font-main);
+    box-sizing: border-box;
+}
+
+h1 {font-size: 3.366rem; }
+h2 {font-size: 2.525rem; }
+h3 {font-size: 1.894rem; }
+h4 {font-size: 1.421rem; }
+h5 {font-size: 1.066rem; }
+
+html, body {
+    width: 100vw;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

@@ -1,0 +1,34 @@
+.container {
+    position: absolute;
+    width: 100vw;
+    height: calc(100dvh - 8rem);
+    overflow-y: hidden;
+    overflow-x: auto;
+    display: flex;
+}
+.side-bar {
+    width: clamp(175px, 20%, 375px);
+    min-width: 175px; 
+    background: var(--background-dark);
+    height: 100%;
+    padding-top: 10px;
+}
+.side-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: inherit;
+    background: linear-gradient(180deg, var(--background-darker), transparent);
+    height: 10px;
+}
+.app {
+    position: relative;
+    flex: 1;
+    min-width: fit-content;
+    height: 100%;
+    overflow: hidden;
+}
+router-outlet {
+    width: 100%;
+    overflow: hidden;
+}
